@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/charles/{id}',function(){
+    
+    return 'teste';
+});
+
+Route::prefix('produtos')->group(function(){
+    Route::get('/',[ProductsController::class, 'index'])->name('product.index');
+    Route::get('/add',[ProductsController::class, 'index'])->name('product.index');
 });
