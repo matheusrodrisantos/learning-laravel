@@ -14,16 +14,12 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
-Route::get('/', function () {
+
+Route::get('/',function(){
     return view('index');
 });
 
-Route::get('/charles/{id}',function(){
-    
-    return 'teste';
-});
 
 Route::prefix('produtos')->group(function(){
     Route::get('/',[ProductsController::class, 'index'])->name('product.index');
-    Route::get('/add',[ProductsController::class, 'index'])->name('product.index');
 });
